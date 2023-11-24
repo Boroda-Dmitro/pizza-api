@@ -167,7 +167,7 @@
     "discount": false
   },
   {
-    "id": "UkJfZxP69mpeDhxwXprHU",
+    "id": "2wXt18xnNKvmp2VQ-9D8z",
     "name": "Барбекю",
     "ingredients": [
       "Тісто",
@@ -180,7 +180,7 @@
       "Сіль і перець"
     ],
     "image": "barbecue",
-    "price": "195",
+    "price": "185",
     "discount": true
   }
 ]
