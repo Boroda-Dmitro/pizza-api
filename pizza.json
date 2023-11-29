@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "name": "Маргарита",
     "ingredients": [
       "Тісто",
@@ -16,7 +15,6 @@
     "discount": false
   },
   {
-    "id": "2",
     "name": "Пепероні",
     "ingredients": [
       "Тісто",
@@ -31,7 +29,6 @@
     "discount": false
   },
   {
-    "id": "3",
     "name": "Гавайська",
     "ingredients": [
       "Тісто",
@@ -47,7 +44,6 @@
     "discount": false
   },
   {
-    "id": "4",
     "name": "Чотири сири",
     "ingredients": [
       "Тісто",
@@ -63,7 +59,6 @@
     "discount": false
   },
   {
-    "id": "5",
     "name": "Вегетаріанська",
     "ingredients": [
       "Тісто",
@@ -81,7 +76,6 @@
     "discount": false
   },
   {
-    "id": "6",
     "name": "М'ясна",
     "ingredients": [
       "Тісто",
@@ -98,7 +92,6 @@
     "discount": false
   },
   {
-    "id": "7",
     "name": "Капрічоза",
     "ingredients": [
       "Тісто",
@@ -116,7 +109,6 @@
     "discount": false
   },
   {
-    "id": "8",
     "name": "Мексиканська",
     "ingredients": [
       "Тісто",
@@ -134,7 +126,6 @@
     "discount": false
   },
   {
-    "id": "9",
     "name": "Френчі",
     "ingredients": [
       "Тісто",
@@ -150,7 +141,6 @@
     "discount": false
   },
   {
-    "id": "10",
     "name": "Барбекю",
     "ingredients": [
       "Тісто",
@@ -167,7 +157,6 @@
     "discount": false
   },
   {
-    "id": "2wXt18xnNKvmp2VQ-9D8z",
     "name": "Барбекю",
     "ingredients": [
       "Тісто",
