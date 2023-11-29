@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import pizzaRouter from "./routes/api/pizza.js";
+import  dotenv from "dotenv";
+
+dotenv.config()
 
 const app = express();
 

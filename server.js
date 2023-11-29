@@ -2,10 +2,7 @@ import app from "./app.js";
 
 import mongoose from "mongoose";
 
-// const { BD_HOST } = process.env;
-
-const BD_HOST =
-  "mongodb+srv://Dimbor:xW3aTufhkk7d3X7m@cluster0.iautypv.mongodb.net/pizza-api?retryWrites=true&w=majority";
+const { BD_HOST } = process.env;
 
 mongoose
   .connect(BD_HOST)
