@@ -7,16 +7,17 @@ const routerPizza = express.Router();
 
 routerPizza.get("/", ctrl.getAllPizzas);
 
-routerPizza.get("/:id", ctrl.getOnePizza);
+routerPizza.get("/:id", middlewares.isValidId, ctrl.getOnePizza);
 
 routerPizza.post("/", middlewares.validateBody(pizzaSchema), ctrl.newPizza);
 
 routerPizza.put(
   "/:id",
+  middlewares.isValidId,
   middlewares.validateBody(pizzaSchema),
   ctrl.updatePizza
 );
 
-routerPizza.delete("/:id", ctrl.removePizza);
+routerPizza.delete("/:id", middlewares.isValidId, ctrl.removePizza);
 
 export default routerPizza;

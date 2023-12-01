@@ -1,16 +1,16 @@
-import { pizzaModels } from "../models/pizza.js";
+import Pizza from "../models/pizza.js";
 import helpers from "../helpers/index.js";
 
-const { getPizzas, getPizzaByID, addNewPizza, editPizza, deletePizza } =
-  pizzaModels;
 const { HttpError, ctrlWrapper } = helpers;
 
 const getAllPizzas = async (req, res) => {
-  res.json(await getPizzas());
+  const result = await Pizza.find();
+  res.json(result);
 };
 
 const getOnePizza = async (req, res) => {
-  const result = await getPizzaByID(req.params.id);
+  const { id } = req.params;
+  const result = await Pizza.findById(id);
   if (!result) {
     throw HttpError(404);
   }
@@ -18,21 +18,23 @@ const getOnePizza = async (req, res) => {
 };
 
 const newPizza = async (req, res) => {
-  const result = await addNewPizza(req.body);
+  const result = await Pizza.create(req.body);
   res.status(201).json(result);
 };
 
 const updatePizza = async (req, res) => {
-  const result = await editPizza(req.params.id, req.body);
+  const { id } = req.params;
+  const result = await Pizza.findByIdAndUpdate(id, req.body, { new: true });
   res.status(201).json(result);
 };
 
 const removePizza = async (req, res) => {
-  const result = await deletePizza(req.params.id);
+  const { id } = req.params;
+  const result = await Pizza.findByIdAndDelete(id);
   if (!result) {
     throw HttpError(404, error.message);
   }
-  res.status(204).json({ message: "Delete success" });
+  res.status(204).json("Delete success");
 };
 
 const ctrl = {
