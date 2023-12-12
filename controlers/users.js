@@ -59,9 +59,25 @@ const login = async (req, res) => {
   });
 };
 
+const getCurrentUser = async (req, res) => {
+  const { name, email } = req.user;
+
+  res.json({ name, email });
+};
+
+const logout = async (req, res) => {
+  const { _id } = req.user;
+
+  await User.findByIdAndUpdate(_id, { token: "" });
+console.log(_id);
+  res.json({ message: "Logout success" });
+};
+
 const ctrl = {
   register: ctrlWrapper(register),
   login: ctrlWrapper(login),
+  getCurrentUser: ctrlWrapper(getCurrentUser),
+  logout: ctrlWrapper(logout),
 };
 
 export default ctrl;

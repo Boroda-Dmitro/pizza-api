@@ -3,9 +3,7 @@ import ctrl from "../../controlers/users.js";
 import middlewares from "../../middlewares/index.js";
 import { userRegisterSchema, userLoginSchema } from "../../schemas/users.js";
 
-
 const authRouter = express.Router();
-
 
 authRouter.post(
   "/register",
@@ -19,5 +17,8 @@ authRouter.post(
   ctrl.login
 );
 
+authRouter.get("/current", middlewares.authenticate, ctrl.getCurrentUser);
+
+authRouter.post("/logout", middlewares.authenticate, ctrl.logout);
 
 export default authRouter;

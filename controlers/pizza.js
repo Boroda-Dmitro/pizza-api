@@ -4,7 +4,9 @@ import helpers from "../helpers/index.js";
 const { HttpError, ctrlWrapper } = helpers;
 
 const getAllPizzas = async (req, res) => {
-  const result = await Pizza.find();
+  const { page = 1, limit = 20, favorite } = req.query;
+  const skip = (page - 1) * limit;
+  const result = await Pizza.find({}, null, { skip, limit });
   res.json(result);
 };
 
@@ -19,6 +21,7 @@ const getOnePizza = async (req, res) => {
 
 const newPizza = async (req, res) => {
   const result = await Pizza.create(req.body);
+  
   res.status(201).json(result);
 };
 

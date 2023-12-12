@@ -9,15 +9,21 @@ routerPizza.get("/", ctrl.getAllPizzas);
 
 routerPizza.get("/:id", middlewares.isValidId, ctrl.getOnePizza);
 
-routerPizza.post("/", middlewares.validateBody(pizzaSchema), ctrl.newPizza);
+routerPizza.post("/", middlewares.authenticate, middlewares.validateBody(pizzaSchema), ctrl.newPizza);
 
 routerPizza.put(
   "/:id",
+  middlewares.authenticate,
   middlewares.isValidId,
   middlewares.validateBody(pizzaSchema),
   ctrl.updatePizza
 );
 
-routerPizza.delete("/:id", middlewares.isValidId, ctrl.removePizza);
+routerPizza.delete(
+  "/:id",
+  middlewares.authenticate,
+  middlewares.isValidId,
+  ctrl.removePizza
+);
 
 export default routerPizza;

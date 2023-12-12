@@ -14,6 +14,7 @@ const usersSchema = new Schema(
     },
     password: { type: String, required: true, minlength: 6 },
     admin: { type: Boolean, default: false },
+    token: String,
   },
   { versionKey: false }
 );
