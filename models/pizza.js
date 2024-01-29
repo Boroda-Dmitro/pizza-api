@@ -10,6 +10,7 @@ const pizzaSchema = new Schema(
     image: { type: String, required: true },
     price: { type: String, required: true },
     discount: { type: Boolean, default: false },
+    type: { type: String, enum: ["pizza", "sushi", "burger"], required: true },
   },
   { versionKey: false }
 );

@@ -6,5 +6,6 @@ export const pizzaSchema = Joi.object({
   image: Joi.string().required(),
   price: Joi.string().required(),
   discount: Joi.boolean().default(false),
+  type: Joi.string().valid("pizza", "sushi", "burger").required(),
 });
 
